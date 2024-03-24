@@ -5,8 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 from app import Application
-from app.admin.pom.locators import AdminPageLocators as loc
-from app.admin.pom.locators_tabs import find_by_link_text
+from app.admin.pom.searcher import Searcher
 
 
 #Проверка на полиси(Все есть)
@@ -28,5 +27,5 @@ def test_redactor():
     app = Application()
     admin_page = app.admin.login_page
     admin_page.creds('role_redactor@test.test', 'role_redactor@test.test')
-    find_by_link_text(admin_page, False, loc.LOCATOR_TAB_SETTINGS, 'Настройки')
+    Searcher.check_by_link_text(admin_page, False, 'LOCATOR_TAB_SETTINGS', 'Настройки')
 
