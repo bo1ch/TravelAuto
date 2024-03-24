@@ -39,3 +39,4 @@ def test_redactor():
     admin_page.open_side_menu()
     sleep(2)
     admin_page.check_tab_main_reports()
+sad
