@@ -1,0 +1,7 @@
+pytest
+selenium
+webdriver_manager
+webdriver-manager
+pytest-html
+pytest-rerunfailures
+pytest-html-reporter
