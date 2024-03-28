@@ -1,5 +1,4 @@
 from app.admin.pom.login import LoginPage
-from app.admin.pom.searcher import Searcher
 
 
 class Admin:
@@ -16,4 +15,3 @@ class Admin:
         self.login_page = LoginPage(driver=driver, host=self.base_url)
 
 
-my_searcher = Searcher

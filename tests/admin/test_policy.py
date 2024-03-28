@@ -27,5 +27,5 @@ def test_redactor():
     app = Application()
     admin_page = app.admin.login_page
     admin_page.creds('role_redactor@test.test', 'role_redactor@test.test')
-    Searcher.check_by_link_text(admin_page, False, 'LOCATOR_TAB_SETTINGS', 'Настройки')
+    Searcher().check_by_link_text(admin_page, False, 'LOCATOR_TAB_SETTINGS', 'Настройки')
 

@@ -2,7 +2,6 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-from app.admin import my_searcher
 from app.admin.pom.searcher import Searcher
 
 
@@ -14,23 +13,24 @@ class LoginPage: #Объявление класса
         self.driver: WebDriver = driver
         self.url = host + self.path
         self.driver.get(self.url)
+        self.searcher = Searcher()
 
 #Отправка данных в поля ввода
     def enter_login(self, text: str):
-        field = Searcher.get_by_class_name(page=self, locator='LOCATOR_LOGIN_FIELD')
+        field = self.searcher.get_by_class_name(page=self, locator='LOCATOR_LOGIN_FIELD')
         field.send_keys(text)
 
     def enter_password(self, text: str):
-        field = Searcher.get_by_class_name(page=self, locator='LOCATOR_PASSWORD_FIELD')
+        field = self.searcher.get_by_class_name(page=self, locator='LOCATOR_PASSWORD_FIELD')
         field.send_keys(text)
 
     def submit(self):
-        btn = Searcher.get_by_class_name(page=self, locator='LOCATOR_SUBMIT_BTN')
+        btn = self.searcher.get_by_class_name(page=self, locator='LOCATOR_SUBMIT_BTN')
         btn.click()
 
     def open_side_menu(self):
         temp=self
-        btn = my_searcher.get_by_class_name(temp, 'LOCATOR_SIDEBAR_TOGGLE_BTN')
+        btn = self.searcher.get_by_class_name(temp, 'LOCATOR_SIDEBAR_TOGGLE_BTN')
         btn.click()
 
     def creds(self, login, password):
