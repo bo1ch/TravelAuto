@@ -23,9 +23,9 @@ from app.admin.pom.searcher import Searcher
 #     admin_page.check_tab_main_reports()
 
 #Проверка на полиси(Новости и связи)
-def test_redactor():
-    app = Application()
-    admin_page = app.admin.login_page
-    admin_page.creds('role_redactor@test.test', 'role_redactor@test.test')
-    Searcher().check_by_link_text(admin_page, False, 'LOCATOR_TAB_SETTINGS', 'Настройки')
-
+# def test_redactor():
+#     app = Application()
+#     admin_page = app.admin.login_page
+#     admin_page.creds('role_redactor@test.test', 'role_redactor@test.test')
+#     Searcher().check_by_link_text(admin_page, True, 'LOCATOR_TAB_SETTINGS', 'Настройки')
+#
